@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashsScreen">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/hatter_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:tintMode="multiply"
+        app:tint="@color/dark_blue_1" />
+
+    <ImageView
+        android:id="@+id/logo_1"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:src="@drawable/logo"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toBottomOf="@id/hatter_1"
+        app:layout_constraintTop_toTopOf="@id/hatter_1"
+        app:tint="@color/dark_blue_1"
+
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
