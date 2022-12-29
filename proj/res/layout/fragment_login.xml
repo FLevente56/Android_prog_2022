@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
     <ImageView
         android:id="@+id/hatter_1"
         android:layout_width="match_parent"
@@ -21,7 +23,7 @@
         android:layout_height="106dp"
         android:src="@drawable/logo"
         android:tintMode="multiply"
-        app:layout_constraintBottom_toBottomOf="@id/login_box"
+        app:layout_constraintBottom_toTopOf="@id/login_box"
         app:layout_constraintTop_toTopOf="@id/hatter_1"
         app:tint="@color/dark_blue_1"
         tools:layout_editor_absoluteX="0dp" />
@@ -30,22 +32,32 @@
         android:id="@+id/login_box"
         android:layout_width="150pt"
         android:layout_height="100pt"
-        android:background="@color/dark_blue_1"
 
         app:layout_constraintBottom_toBottomOf="@id/hatter_1"
         app:layout_constraintTop_toBottomOf="@id/logo_1"
         app:layout_constraintLeft_toLeftOf="@id/hatter_1"
         app:layout_constraintRight_toRightOf="@id/hatter_1"
-
         />
 
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome, Sign in please"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/login_box"
+        app:layout_constraintLeft_toLeftOf="@id/login_box"
+        app:layout_constraintRight_toRightOf="@id/login_box"
+        app:layout_constraintBottom_toTopOf="@id/email_input"
+
+        />
     <EditText
         android:id="@+id/email_input"
         android:layout_width="100pt"
         android:layout_height="wrap_content"
         android:text="Enter your email"
         android:layout_margin="1dp"
-        app:layout_constraintTop_toTopOf="@id/login_box"
+        app:layout_constraintTop_toBottomOf="@id/welcome"
         app:layout_constraintLeft_toLeftOf="@id/login_box"
         app:layout_constraintRight_toRightOf="@id/login_box"
         app:layout_constraintBottom_toTopOf="@id/password_input"
@@ -56,18 +68,62 @@
         android:id="@+id/password_input"
         android:layout_width="100pt"
         android:layout_height="wrap_content"
-        android:text="Enter your password"
         android:layout_margin="1dp"
-        app:layout_constraintTop_toBottomOf="@id/email_input"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        android:text="Enter your password"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="@id/login_box"
         app:layout_constraintRight_toRightOf="@id/login_box"
-        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/email_input"
+        app:layout_constraintBottom_toTopOf="@id/forgot_password"
         />
+
     <TextView
         android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot password?"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/password_input"
+        app:layout_constraintLeft_toLeftOf="@id/login_box"
+        app:layout_constraintRight_toLeftOf="@id/click_here_1"
+        app:layout_constraintBottom_toTopOf="@id/singin_button"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/click_here_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Here!"
+        android:textColor="@color/white"
+        android:clickable="true"
+        app:layout_constraintTop_toBottomOf="@id/password_input"
+        app:layout_constraintLeft_toRightOf="@id/forgot_password"
+        app:layout_constraintRight_toRightOf="@id/login_box"
+        app:layout_constraintBottom_toTopOf="@id/singin_button"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/singin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        app:layout_constraintTop_toBottomOf="@id/click_here_1"
+        app:layout_constraintLeft_toLeftOf="@id/login_box"
+        app:layout_constraintRight_toRightOf="@id/login_box"
+        app:layout_constraintBottom_toTopOf="@id/register_button"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintTop_toBottomOf="@id/singin_button"
+        app:layout_constraintLeft_toLeftOf="@id/login_box"
+        app:layout_constraintRight_toRightOf="@id/login_box"
+        app:layout_constraintBottom_toBottomOf="@id/login_box"
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
