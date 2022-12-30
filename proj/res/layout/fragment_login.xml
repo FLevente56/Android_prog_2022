@@ -32,7 +32,6 @@
         android:id="@+id/login_box"
         android:layout_width="150pt"
         android:layout_height="100pt"
-
         app:layout_constraintBottom_toBottomOf="@id/hatter_1"
         app:layout_constraintTop_toBottomOf="@id/logo_1"
         app:layout_constraintLeft_toLeftOf="@id/hatter_1"
